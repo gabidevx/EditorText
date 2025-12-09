@@ -4,8 +4,8 @@
 #include <SFML/Window/Clipboard.hpp> // clipboard
 #include <optional>
 
-#include <vector> // vectori
-#include <string> //strin uri
+#include <vector>    // vectori
+#include <string>    // string uri
 #include <algorithm> // min, max
 
 using namespace std;
@@ -28,7 +28,7 @@ struct editor {
     int cursorPosition;
     int selectionAnchor;
 
-    vector <piece> pieces;
+    vector <piece> pieces; // must change to a balanced tree
     vector <int> lineStarts;
 };
 
@@ -301,6 +301,15 @@ void initWindow(editor& notepad) {
                     //resetam unde sta inceputul selectiei
                     notepad.selectionAnchor = notepad.cursorPosition;
                 }
+                // CTRL + X
+                else if (keyEvent->code == sf::Keyboard::Key::X && ctrl)
+                {
+                    if (hasSelection(notepad))
+                    {
+                        sf::Clipboard::setString(getSelectedText(notepad));
+                        deleteSelection(notepad);
+                    }
+                }
             }
         }
 
@@ -349,7 +358,7 @@ void initWindow(editor& notepad) {
         //text
         window.draw(text);
 
-        //curosor
+        // curosor
         sf::Vector2f curPos = text.findCharacterPos(notepad.cursorPosition);
         sf::RectangleShape curLine(sf::Vector2f({ 2, 24 }));
         curLine.setFillColor(sf::Color::Red);

@@ -4,5 +4,5 @@ C:\Users\gabic\EditorText\EditorText\EditorText.cpp(84,41): warning C4267: '=': 
 C:\Users\gabic\EditorText\EditorText\EditorText.cpp(90,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\gabic\EditorText\EditorText\EditorText.cpp(110,41): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\gabic\EditorText\EditorText\EditorText.cpp(137,37): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\gabic\EditorText\EditorText\EditorText.cpp(285,71): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\gabic\EditorText\EditorText\EditorText.cpp(283,71): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   EditorText.vcxproj -> C:\Users\gabic\EditorText\x64\Debug\EditorText.exe
